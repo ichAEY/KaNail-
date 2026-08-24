@@ -20,13 +20,12 @@ mobile = mobile.replace(
   "const promotions: Array<{ title: string; highlight: string; description: string; period: string; image: string; alt: string }> = [];",
 );
 
-// There are no verified before/after pairs. Preserve the exact gallery mechanics,
-// but present the two large cards as selected real works.
+// Ka Nail has no genuine before/after pair. Keep only the real portfolio in both
+// desktop and mobile versions and make the lightbox navigate only through it.
 mobile = mobile
-  .replace(/<h2>До\s*\/\s*после<\/h2>/g, "<h2>Избранные работы</h2>")
+  .replace(/<h2>До\s*\/\s*после<\/h2>/g, "<h2>Работы Карины</h2>")
   .replace(/Реальные примеры обработки, формы и покрытия/g, "Реальные фотографии работ Карины")
-  .replace(/<h3>До\s*\/\s*после<\/h3>/g, "<h3>Избранные работы</h3>")
-  .replace(/<figcaption className="mct-ba-labels">[\s\S]*?<\/figcaption>/g, "")
+  .replace("const lightboxItems = [...beforeAfter, ...galleryWorks];", "const lightboxItems = galleryWorks;")
   .replace(/напишите Карине напрямую\./g, "свяжитесь с Кариной напрямую.");
 
 writeFileSync(mobilePath, mobile, "utf8");
@@ -53,7 +52,7 @@ writeFileSync(
 
 appendFileSync(
   tuningPath,
-  `\n\n/* Ka Nail: only blocks and contacts backed by verified customer data stay visible. */\n.mct-promotions,\na[href="#mobile-promotions"],\na.mct-final-secondary[href=""],\na.dct-top-icon[href=""],\n.mct-ba-labels {\n  display: none !important;\n}\n\n.mct-final-contact-grid {\n  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;\n}\n`,
+  `\n\n/* Ka Nail: only blocks and contacts backed by verified customer data stay visible. */\n.mct-promotions,\na[href="#mobile-promotions"],\na.mct-final-secondary[href=""],\na.dct-top-icon[href=""],\n.mct-ba-stage,\n.mct-gallery-content > h3:first-of-type,\n.mct-gallery-ba,\n.mct-ba-labels {\n  display: none !important;\n}\n\n.mct-final-contact-grid {\n  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;\n}\n\n/* Keep the mobile intro typography stable on iOS: no synthetic bold switch while the font settles. */\n@media (max-width: 767px) {\n  .mct-intro-mark span {\n    font-family: "Cormorant Garamond", Georgia, serif !important;\n    font-weight: 500 !important;\n    font-style: normal !important;\n    font-synthesis: none !important;\n    font-variation-settings: "wght" 500;\n    -webkit-font-smoothing: antialiased;\n    text-rendering: geometricPrecision;\n  }\n\n  .mct-intro-mark small {\n    font-weight: 600 !important;\n    font-synthesis: none !important;\n    -webkit-font-smoothing: antialiased;\n  }\n}\n`,
   "utf8",
 );
 
