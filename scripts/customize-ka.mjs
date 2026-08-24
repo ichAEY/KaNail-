@@ -14,6 +14,12 @@ mobile = mobile.replace(
   `const isOpen = null;\n\n      setOpenStatus({\n        isOpen,\n        label: "По предварительной записи",\n      });`,
 );
 
+// An empty promotions array needs an explicit type for the template's TSX to type-check.
+mobile = mobile.replace(
+  "const promotions = [];",
+  "const promotions: Array<{ title: string; highlight: string; description: string; period: string; image: string; alt: string }> = [];",
+);
+
 // There are no verified before/after pairs. Preserve the exact gallery mechanics,
 // but present the two large cards as selected real works.
 mobile = mobile
