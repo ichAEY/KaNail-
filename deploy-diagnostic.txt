@@ -1,0 +1,86 @@
+Ka Nail Pages diagnostic
+Commit: f224a89cfa7cb9b4be372e031ecada56ba6fbf58
+Started: 2026-08-24T14:20:43Z
+
+===== clone template =====
+Cloning into 'template'...
+EXIT_CODE=0
+
+===== checkout pinned template =====
+Note: switching to '89647b7d61ebcdfd43f74de2afa4d81b3dfb0194'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 89647b7 Bump TANEM production tracker version
+EXIT_CODE=0
+
+===== npm ci =====
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+
+added 513 packages in 16s
+npm warn allow-scripts 7 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   esbuild@0.18.20 (postinstall: node install.js)
+npm warn allow-scripts   esbuild@0.25.12 (postinstall: node install.js)
+npm warn allow-scripts   esbuild@0.28.0 (postinstall: node install.js)
+npm warn allow-scripts   sharp@0.34.5 (install: node install/check.js || npm run build)
+npm warn allow-scripts   unrs-resolver@1.11.1 (postinstall: napi-postinstall unrs-resolver 1.11.1 check)
+npm warn allow-scripts   workerd@1.20260515.1 (postinstall: node install.js)
+npm warn allow-scripts   esbuild@0.27.3 (postinstall: node install.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+EXIT_CODE=0
+
+===== generate TANEM customer site =====
+TANEM site data applied: Карина / Ka Nail
+EXIT_CODE=0
+
+===== apply Ka Nail cleanup =====
+Ka Nail customer-specific template cleanup applied.
+EXIT_CODE=0
+
+===== remove public/_next + patch tsconfig =====
+EXIT_CODE=0
+
+===== next build =====
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+▲ Next.js 16.2.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.6s
+  Running TypeScript ...
+  Finished TypeScript in 2.3s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/3) ...
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+✓ Generating static pages using 3 workers (3/3) in 141ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+└ ○ /_not-found
+
+
+○  (Static)  prerendered as static content
+
+EXIT_CODE=0
+
+FINAL_EXIT_CODE=0
