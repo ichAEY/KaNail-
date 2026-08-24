@@ -88,14 +88,25 @@ export default {
 
   services: {
     manicure: [
-      { name: "Маникюр женский", price: "1 700 ₽", time: "", description: "Женский маникюр.", url: bookingUrl },
-      { name: "Маникюр + выравнивание Luxio", price: "3 500 ₽", time: "", description: "Маникюр, выравнивание и покрытие Luxio.", url: bookingUrl },
-      { name: "Френч + выравнивание Luxio", price: "3 900 ₽", time: "", description: "Маникюр, выравнивание и френч Luxio.", url: bookingUrl },
-      { name: "Маникюр мужской", price: "2 200 ₽", time: "", description: "Мужской маникюр.", url: bookingUrl },
+      { name: "Маникюр женский", price: "1 800 ₽", time: "1 ч", description: "Маникюр женский.", url: bookingUrl },
+      { name: "Маникюр мужской", price: "2 200 ₽", time: "1 ч", description: "Маникюр мужской.", url: bookingUrl },
+      { name: "Маникюр с покрытием гель лака в один тон", price: "3 200 ₽", time: "1 ч 30 мин", description: "Снятие + маникюр + гель лак.", url: bookingUrl },
+      { name: "Маникюр с выравниванием и гель лак", price: "3 500 ₽", time: "1 ч 30 мин", description: "Маникюр всё включено.", url: bookingUrl },
+      { name: "Маникюр френч все включено", price: "4 000 ₽", time: "2 ч", description: "Маникюр всё включено френч.", url: bookingUrl },
+      { name: "Укрепление ногтей гелем и покрытие в один тон", price: "4 000 ₽", time: "2 ч", description: "Маникюр всё включено.", url: bookingUrl },
+      { name: "Коррекция длинных ногтей гель", price: "4 500 ₽", time: "2 ч", description: "Коррекция длинных ногтей гелем.", url: bookingUrl },
+      { name: "Наращивание ногтей", price: "6 000 ₽", time: "2 ч 30 мин", description: "Наращивание ногтей.", url: bookingUrl },
+      { name: "Ремонт 1 ногтя", price: "200 ₽", time: "10 мин", description: "Дополнительная услуга.", url: bookingUrl },
+      { name: "Снятие гель лака", price: "500 ₽", time: "30 мин", description: "Дополнительная услуга.", url: bookingUrl },
+      { name: "Лечение IBX", price: "500 ₽", time: "30 мин", description: "Дополнительная услуга.", url: bookingUrl },
+      { name: "Френч", price: "500 ₽", time: "30 мин", description: "Дополнительная услуга.", url: bookingUrl },
+      { name: "Втирка", price: "500 ₽", time: "15 мин", description: "Дополнительная услуга.", url: bookingUrl },
     ],
     pedicure: [
-      { name: "Педикюр с покрытием Luxio", price: "4 000 ₽", time: "", description: "Педикюр с покрытием Luxio.", url: bookingUrl },
-      { name: "Педикюр-френч Luxio", price: "4 400 ₽", time: "", description: "Педикюр с френчем Luxio.", url: bookingUrl },
+      { name: "Педикюр женский", price: "3 500 ₽", time: "1 ч", description: "Педикюр женский.", url: bookingUrl },
+      { name: "Педикюр мужской", price: "3 700 ₽", time: "1 ч", description: "Педикюр мужской.", url: bookingUrl },
+      { name: "Педикюр пальчики с покрытием гель лака в один тон", price: "3 500 ₽", time: "1 ч 30 мин", description: "Педикюр пальчики.", url: bookingUrl },
+      { name: "Педикюр с покрытием гель лак", price: "4 000 ₽", time: "1 ч 30 мин", description: "Женский педикюр всё включено.", url: bookingUrl },
     ],
   },
 
