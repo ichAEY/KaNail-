@@ -67,6 +67,7 @@ jobs:
             (cd template && run_step "apply Ka Nail cleanup" node scripts/customize-ka.mjs) || status=$?
           fi
           if [ "$status" -eq 0 ]; then
+            rm -rf template/public/_next
             node - <<'NODE' >> "$REPORT" 2>&1
           const fs = require('fs');
           const path = 'template/tsconfig.json';
@@ -80,7 +81,7 @@ jobs:
           NODE
             code=$?
             echo "" >> "$REPORT"
-            echo "===== patch tsconfig =====" >> "$REPORT"
+            echo "===== remove public/_next + patch tsconfig =====" >> "$REPORT"
             echo "EXIT_CODE=$code" >> "$REPORT"
             if [ "$code" -ne 0 ]; then status=$code; fi
           fi
