@@ -1,0 +1,132 @@
+// Ka Nail customer data for the exact TANEM template pinned from ichAEY/claytone-current.
+// Individual data only. Template code, layout and animations are loaded from the reference commit during Pages build.
+
+const bookingUrl = "https://dikidi.net/497647";
+const mapUrl = "https://yandex.ru/maps/org/ka_nail/173380608081/?ll=37.473123%2C55.655254&z=17";
+const reviewsUrl = "https://yandex.ru/maps/org/ka_nail/173380608081/reviews/?ll=37.473123%2C55.655254&z=17";
+
+const gallery = Array.from({ length: 13 }, (_, index) => {
+  const number = String(index + 1).padStart(2, "0");
+  return {
+    src: `/KaNail-/assets/work-${number}.png`,
+    alt: `Работа Карины, Ka Nail — ${index + 1}`,
+  };
+});
+
+export default {
+  brand: {
+    name: "Ka Nail",
+    subtitle: "Nail studio",
+    monogram: "K",
+  },
+
+  master: {
+    name: "Карина",
+    dative: "Карине",
+    genitive: "Карины",
+    monogram: "K",
+    profession: "мастер ногтевого сервиса",
+    heroTitle: "Карина — мастер ногтевого сервиса",
+    heroCopy: "Маникюр и педикюр с аккуратной обработкой, покрытием Luxio и вниманием к деталям.",
+    experienceYears: "10+",
+    experienceAria: "Более десяти лет опыта",
+    aboutTitle: "Карина — мастер Ka Nail",
+    aboutLead: "Я Карина — мастер маникюра и педикюра. В профессии более 10 лет.",
+    aboutParagraphs: [
+      "Я работаю с маникюром и педикюром, покрытием Luxio и френчем. Для меня важны аккуратная форма, чистая обработка и результат, который удобно носить каждый день.",
+      "Клиенты часто отмечают в отзывах скорость работы, качество, внимание к деталям и чистоту рабочего места.",
+    ],
+    skills: [
+      "Маникюр и педикюр",
+      "Покрытие Luxio",
+      "Мужской маникюр",
+    ],
+  },
+
+  location: {
+    city: "Москва",
+    metro: "м. Тропарёво",
+    cityMetro: "Москва · м. Тропарёво",
+    address: "Москва, проспект Вернадского, 92",
+    mapCardAddress: "проспект Вернадского, 92",
+    schedule: "по предварительной записи",
+    scheduleCapitalized: "По предварительной записи",
+    latitude: 55.655254,
+    longitude: 37.473123,
+  },
+
+  contacts: {
+    phoneDisplay: "+7 960 188-68-06",
+    phoneHref: "tel:+79601886806",
+    personalTelegramUrl: "",
+    channelTelegramUrl: "",
+  },
+
+  links: {
+    bookingUrl,
+    bookingWidgetScriptUrl: "/KaNail-/noop.js",
+    reviewsUrl,
+    mapUrl,
+    routeUrl: "https://yandex.ru/maps/?mode=routes&rtext=~55.655254%2C37.473123&rtt=auto",
+    mobileMapEmbedUrl: "https://yandex.ru/map-widget/v1/?ll=37.473123%2C55.655254&mode=search&oid=173380608081&ol=biz&z=16",
+    desktopMapEmbedUrl: "https://yandex.ru/map-widget/v1/?ll=37.473123%2C55.655254&z=16&l=map&pt=37.473123%2C55.655254%2Cpm2rdm",
+    yandexMapHrefMatch: "yandex.ru/maps/org/ka_nail",
+  },
+
+  reputation: {
+    rating: "5,0",
+    reviewCount: "54",
+  },
+
+  images: {
+    portrait: "/KaNail-/assets/karina.png",
+    about: "/KaNail-/assets/karina.png",
+    favicon: "/KaNail-/favicon.svg",
+    beforeAfter: gallery.slice(0, 2),
+    gallery,
+  },
+
+  services: {
+    manicure: [
+      { name: "Маникюр женский", price: "1 700 ₽", time: "", description: "Женский маникюр.", url: bookingUrl },
+      { name: "Маникюр + выравнивание Luxio", price: "3 500 ₽", time: "", description: "Маникюр, выравнивание и покрытие Luxio.", url: bookingUrl },
+      { name: "Френч + выравнивание Luxio", price: "3 900 ₽", time: "", description: "Маникюр, выравнивание и френч Luxio.", url: bookingUrl },
+      { name: "Маникюр мужской", price: "2 200 ₽", time: "", description: "Мужской маникюр.", url: bookingUrl },
+    ],
+    pedicure: [
+      { name: "Педикюр с покрытием Luxio", price: "4 000 ₽", time: "", description: "Педикюр с покрытием Luxio.", url: bookingUrl },
+      { name: "Педикюр-френч Luxio", price: "4 400 ₽", time: "", description: "Педикюр с френчем Luxio.", url: bookingUrl },
+    ],
+  },
+
+  reviews: [
+    { text: "Карина очень внимательна к деталям. Маникюр носится чудесно, всё аккуратно и качественно.", author: "Аида" },
+    { text: "Удобно, близко, быстро и при этом качественно и красиво.", author: "Светлана" },
+    { text: "Маникюр идеальный и делается за очень короткое время.", author: "Анастасия Ч" },
+  ],
+
+  promotions: [],
+
+  amenities: [
+    { title: "Wi‑Fi", text: "Доступен для клиентов" },
+    { title: "Парковка", text: "Есть рядом с адресом" },
+    { title: "Мужской маникюр", text: "Доступен по записи" },
+  ],
+
+  seo: {
+    title: "Карина | Ka Nail — маникюр и педикюр в Москве",
+    description: "Ka Nail — маникюр и педикюр у мастера Карины в Москве. Услуги, цены, реальные работы, отзывы и онлайн-запись.",
+    keywords: [
+      "Ka Nail",
+      "Карина маникюр",
+      "маникюр Тропарёво",
+      "педикюр Тропарёво",
+      "маникюр проспект Вернадского",
+    ],
+    locale: "ru_RU",
+  },
+
+  analytics: {
+    yandexMetrikaId: "0",
+  },
+};
