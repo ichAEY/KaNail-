@@ -17,11 +17,11 @@ mobile = mobile.replace(
 // There are no verified before/after pairs. Preserve the exact gallery mechanics,
 // but present the two large cards as selected real works.
 mobile = mobile
-  .replace("<h2>До / после</h2>", "<h2>Избранные работы</h2>")
-  .replace("Реальные примеры обработки, формы и покрытия", "Реальные фотографии работ Карины")
-  .replace("<h3>До / после</h3>", "<h3>Избранные работы</h3>")
-  .replaceAll('<figcaption className="mct-ba-labels"><span>До</span><span>После</span></figcaption>', "")
-  .replace("напишите Карине напрямую.", "свяжитесь с Кариной напрямую.");
+  .replace(/<h2>До\s*\/\s*после<\/h2>/g, "<h2>Избранные работы</h2>")
+  .replace(/Реальные примеры обработки, формы и покрытия/g, "Реальные фотографии работ Карины")
+  .replace(/<h3>До\s*\/\s*после<\/h3>/g, "<h3>Избранные работы</h3>")
+  .replace(/<figcaption className="mct-ba-labels">[\s\S]*?<\/figcaption>/g, "")
+  .replace(/напишите Карине напрямую\./g, "свяжитесь с Кариной напрямую.");
 
 writeFileSync(mobilePath, mobile, "utf8");
 
@@ -47,7 +47,7 @@ writeFileSync(
 
 appendFileSync(
   tuningPath,
-  `\n\n/* Ka Nail: hide blocks/contacts that have no verified customer data. */\n.mct-promotions,\na[href="#mobile-promotions"],\na.mct-final-secondary[href=""],\na.dct-top-icon[href=""] {\n  display: none !important;\n}\n\n.mct-final-contact-grid {\n  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;\n}\n`,
+  `\n\n/* Ka Nail: only blocks and contacts backed by verified customer data stay visible. */\n.mct-promotions,\na[href="#mobile-promotions"],\na.mct-final-secondary[href=""],\na.dct-top-icon[href=""],\n.mct-ba-labels {\n  display: none !important;\n}\n\n.mct-final-contact-grid {\n  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;\n}\n`,
   "utf8",
 );
 
