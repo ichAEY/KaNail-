@@ -40,13 +40,13 @@ layout = layout
   .replace(/\n\s*<noscript>[\s\S]*?<\/noscript>/, "")
   .replace(/\n\s*<a\s+id="yclients-booking-proxy"[\s\S]*?\/>/, "")
   .replace(/\n\s*<script src="tanem-metrika-events\.js[^>]*\/>/, "")
-  .replace(/\n\s*<script\s+type="text\/javascript"[\s\S]*?src="\/KaNail-\/noop\.js"[\s\S]*?\/>/, "");
+  .replace(/\n\s*<script\s+type="text\/javascript"[\s\S]*?src="\/noop\.js"[\s\S]*?\/>/, "");
 writeFileSync(layoutPath, layout, "utf8");
 
-// GitHub project pages need a basePath. This is the only hosting-specific change.
+// The production site is served from ka-nails.tanem.ru, so assets must resolve from /.
 writeFileSync(
   nextConfigPath,
-  `import type { NextConfig } from "next";\n\nconst isGitHubPages = process.env.GITHUB_ACTIONS === "true";\n\nconst nextConfig: NextConfig = {\n  ...(isGitHubPages\n    ? {\n        output: "export",\n        trailingSlash: true,\n        images: { unoptimized: true },\n        basePath: "/KaNail-",\n      }\n    : {}),\n};\n\nexport default nextConfig;\n`,
+  `import type { NextConfig } from "next";\n\nconst isGitHubPages = process.env.GITHUB_ACTIONS === "true";\n\nconst nextConfig: NextConfig = {\n  ...(isGitHubPages\n    ? {\n        output: "export",\n        trailingSlash: true,\n        images: { unoptimized: true },\n      }\n    : {}),\n};\n\nexport default nextConfig;\n`,
   "utf8",
 );
 
