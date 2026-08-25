@@ -8,7 +8,7 @@ const reviewsUrl = "https://yandex.ru/maps/org/ka_nail/173380608081/reviews/?ll=
 const gallery = Array.from({ length: 13 }, (_, index) => {
   const number = String(index + 1).padStart(2, "0");
   return {
-    src: `/KaNail-/assets/work-${number}.png`,
+    src: `/assets/work-${number}.png`,
     alt: `Работа Карины, Ka Nail — ${index + 1}`,
   };
 });
@@ -64,7 +64,7 @@ export default {
 
   links: {
     bookingUrl,
-    bookingWidgetScriptUrl: "/KaNail-/noop.js",
+    bookingWidgetScriptUrl: "/noop.js",
     reviewsUrl,
     mapUrl,
     routeUrl: "https://yandex.ru/maps/?mode=routes&rtext=~55.655254%2C37.473123&rtt=auto",
@@ -79,9 +79,9 @@ export default {
   },
 
   images: {
-    portrait: "/KaNail-/assets/karina.png",
-    about: "/KaNail-/assets/karina.png",
-    favicon: "/KaNail-/favicon.svg",
+    portrait: "/assets/karina.png",
+    about: "/assets/karina.png",
+    favicon: "/favicon.svg",
     beforeAfter: gallery.slice(0, 2),
     gallery,
   },
